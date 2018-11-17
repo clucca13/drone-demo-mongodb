@@ -1,0 +1,15 @@
+kind: pipeline
+name: default
+
+steps:
+- name: ping
+  image: mongo:4
+  commands:
+  - sleep 5
+  - mongo --host mongo --eval "db.version()"
+
+services:
+- name: mongo
+  image: mongo:4
+  command: [ --smallfiles ]
+
