@@ -3,13 +3,13 @@ name: default
 
 steps:
 - name: ping
-  image: mongo:4
+  image: mongo:4.0.0
   commands:
   - sleep 5
   - mongo --host mongo --eval "db.version()"
 
 services:
 - name: mongo
-  image: mongo:4
+  image: mongo:4.0.0
   command: [ --smallfiles ]
 
